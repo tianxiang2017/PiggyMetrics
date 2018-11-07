@@ -6,4 +6,4 @@ spring:
       uri: http://config:8888 #配置中心地址
       fail-fast: true
       username: user #配置中心用户名
-      password: ${CONFIG_SERVICE_PASSWORD} #配置中心密码
+      password: ${CONFIG_SERVICE_PASSWORD:password} #配置中心密码

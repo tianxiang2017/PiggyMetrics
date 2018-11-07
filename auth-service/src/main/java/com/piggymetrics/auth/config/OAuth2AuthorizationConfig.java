@@ -47,17 +47,20 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
                 .scopes("ui")
                 .and()
                 .withClient("account-service")
-                .secret(env.getProperty("ACCOUNT_SERVICE_PASSWORD"))
+//                .secret(env.getProperty("ACCOUNT_SERVICE_PASSWORD"))
+                .secret("password") // 先写死，后续再优化
                 .authorizedGrantTypes("client_credentials", "refresh_token")
                 .scopes("server")
                 .and()
                 .withClient("statistics-service")
-                .secret(env.getProperty("STATISTICS_SERVICE_PASSWORD"))
+//                .secret(env.getProperty("STATISTICS_SERVICE_PASSWORD"))
+                .secret("password") // 先写死，后续再优化
                 .authorizedGrantTypes("client_credentials", "refresh_token")
                 .scopes("server")
                 .and()
                 .withClient("notification-service")
-                .secret(env.getProperty("NOTIFICATION_SERVICE_PASSWORD"))
+//                .secret(env.getProperty("NOTIFICATION_SERVICE_PASSWORD"))
+                .secret("password") // 先写死，后续再优化
                 .authorizedGrantTypes("client_credentials", "refresh_token")
                 .scopes("server");
         // @formatter:on
